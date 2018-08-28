@@ -108,6 +108,15 @@ var ReactSignupLoginComponent = function (_React$Component) {
           textAlign: 'center',
           height: 40
         },
+        footerLink: {
+            display: 'block',
+            textAlign: 'center',
+            height: 14
+          },
+        footerMessage: {
+            textAlign: 'center',
+            height: 40
+          },
         logo: {
             textAlign: 'center',
             height: 40,
@@ -190,6 +199,16 @@ var ReactSignupLoginComponent = function (_React$Component) {
             { style: Object.assign(styles.footerTitle, this.props.styles.footerTitle) },
             this.props.footerTitle
           ),
+          React.createElement(
+            'a',
+            {href: Object.assign(this.props.footerLink), style: Object.assign(styles.footerLink, this.props.styles.footerLink)},
+            this.props.footerLinkLabel
+          ),
+        React.createElement(
+            'h3',
+            { style: Object.assign(styles.footerMessage, this.props.styles.footerMessage) },
+            this.props.footerMessage
+          ),
       );
     }
   }]);
@@ -202,6 +221,9 @@ ReactSignupLoginComponent.propTypes = {
   subTitle: PropTypes.string,
   logo: PropTypes.string,
   footerTitle:PropTypes.string,
+  footerLink:PropTypes.string,
+  footerLinkLabel:PropTypes.string,
+  footerMessage:PropTypes.string,
   isLogin: PropTypes.bool,
   isRecoveringPassword: PropTypes.bool,
   styles: PropTypes.shape({
@@ -210,7 +232,9 @@ ReactSignupLoginComponent.propTypes = {
     subTitle: PropTypes.object,
     logo: PropTypes.object,
     flipper: PropTypes.object,
-    footerTitleStyles:PropTypes.object,
+    footerTitle:PropTypes.object,
+    footerLink:PropTypes.object,
+    footerMessage:PropTypes.object,
     signup: PropTypes.shape({
       wrapper: PropTypes.object,
       inputWrapper: PropTypes.object,
