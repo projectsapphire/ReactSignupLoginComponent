@@ -94,9 +94,7 @@ var ReactSignupLoginComponent = function (_React$Component) {
           lineHeight: '40px'
         },
         subTitle: {
-            textAlign: 'center',
-            height: 40,
-            lineHeight: '40px'
+            textAlign: 'center'
           },
         flipper: {
           transition: '0.4s',
@@ -106,16 +104,13 @@ var ReactSignupLoginComponent = function (_React$Component) {
         },
         footerTitle: {
           textAlign: 'center',
-          height: 40
         },
         footerLink: {
             display: 'block',
-            textAlign: 'center',
-            height: 14
+            textAlign: 'center'
           },
         footerMessage: {
             textAlign: 'center',
-            height: 40
           },
         logo: {
             textAlign: 'center',
