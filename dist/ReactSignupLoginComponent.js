@@ -93,12 +93,26 @@ var ReactSignupLoginComponent = function (_React$Component) {
           height: 40,
           lineHeight: '40px'
         },
+        subTitle: {
+            textAlign: 'center',
+            height: 40,
+            lineHeight: '40px'
+          },
         flipper: {
           transition: '0.4s',
           transformStyle: 'preserve-3d',
           position: 'relative',
           transform: 'rotateY(' + (!this.state.isLogin || this.state.isRecoveringPassword ? '180' : '0') + 'deg)'
-        }
+        },
+        footerTitle: {
+          textAlign: 'center',
+          height: 40
+        },
+        logo: {
+            textAlign: 'center',
+            height: 40,
+            lineHeight: '40px'
+          },
       };
       var showCard = function showCard() {
         if (_this2.state.isLogin && !_this2.state.isRecoveringPassword) {
@@ -152,15 +166,30 @@ var ReactSignupLoginComponent = function (_React$Component) {
           style: Object.assign(styles.wrapper, this.props.styles.mainWrapper)
         },
         React.createElement(
+          'div',
+          { style: Object.assign(styles.logo, this.props.styles.logo) },
+          this.props.logo
+        ),
+        React.createElement(
           'h1',
           { style: Object.assign(styles.title, this.props.styles.mainTitle) },
           this.props.title
         ),
         React.createElement(
+            'h2',
+            { style: Object.assign(styles.subTitle, this.props.styles.subTitle) },
+            this.props.subTitle
+          ),
+        React.createElement(
           'div',
           { style: Object.assign(styles.flipper, this.props.styles.flipper) },
           showCard()
-        )
+        ),
+        React.createElement(
+            'h3',
+            { style: Object.assign(styles.footerTitle, this.props.styles.footerTitle) },
+            this.props.footerTitle
+          ),
       );
     }
   }]);
@@ -170,12 +199,18 @@ var ReactSignupLoginComponent = function (_React$Component) {
 
 ReactSignupLoginComponent.propTypes = {
   title: PropTypes.string,
+  subTitle: PropTypes.string,
+  logo: PropTypes.string,
+  footerTitle:PropTypes.string,
   isLogin: PropTypes.bool,
   isRecoveringPassword: PropTypes.bool,
   styles: PropTypes.shape({
     mainWrapper: PropTypes.object,
     mainTitle: PropTypes.object,
+    subTitle: PropTypes.object,
+    logo: PropTypes.object,
     flipper: PropTypes.object,
+    footerTitleStyles:PropTypes.object,
     signup: PropTypes.shape({
       wrapper: PropTypes.object,
       inputWrapper: PropTypes.object,
@@ -217,6 +252,7 @@ ReactSignupLoginComponent.propTypes = {
 
 ReactSignupLoginComponent.defaultProps = {
   title: 'Company Name',
+  footerTitle:'Footer title',
   isLogin: true,
   isRecoveringPassword: false,
   styles: {},
