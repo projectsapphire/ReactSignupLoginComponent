@@ -83,7 +83,6 @@ var ReactSignupLoginComponent = function (_React$Component) {
           margin: 10,
           padding: 20,
           maxWidth: '500px',
-
           width: 500,
           height: 400,
           perspective: 1000
@@ -203,7 +202,7 @@ var ReactSignupLoginComponent = function (_React$Component) {
             'h3',
             { style: Object.assign(styles.footerMessage, this.props.styles.footerMessage) },
             this.props.footerMessage
-          ),
+          )
       );
     }
   }]);
