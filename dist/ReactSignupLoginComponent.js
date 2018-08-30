@@ -271,9 +271,14 @@ ReactSignupLoginComponent.propTypes = {
 
 ReactSignupLoginComponent.defaultProps = {
   title: 'Company Name',
-  footerTitle:'Footer title',
   isLogin: true,
   isRecoveringPassword: false,
+  subTitle: 'Sub Title',
+  logo: 'Logo',
+  footerTitle:'Footer Title',
+  footerLink:'/',
+  footerLinkLabel:'Footer Link',
+  footerMessage :'Footer Text',
   styles: {},
   usernameCustomLabel: 'Username',
   passwordCustomLabel: 'Password',
