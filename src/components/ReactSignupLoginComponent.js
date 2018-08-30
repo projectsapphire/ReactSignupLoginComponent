@@ -52,32 +52,47 @@ class ReactSignupLoginComponent extends React.Component {
 
   render() {
     const styles = {
-      wrapper: {
-        border: '1px solid #eee',
-        borderRadius: 3,
-        backgroundColor: '#FAFAFA',
-        margin: 10,
-        padding: 20,
-        maxWidth: '500px',
-
-        width: 500,
-        height: 400,
-        perspective: 1000,
-      },
-      title: {
-        textAlign: 'center',
-        height: 40,
-        lineHeight: '40px',
-      },
-      flipper: {
-        transition: '0.4s',
-        transformStyle: 'preserve-3d',
-        position: 'relative',
-        transform: `rotateY(${!this.state.isLogin || this.state.isRecoveringPassword
-          ? '180'
-          : '0'}deg)`,
-      },
-    };
+        wrapper: {
+          border: '1px solid #eee',
+          borderRadius: 3,
+          backgroundColor: '#FAFAFA',
+          margin: 10,
+          padding: 20,
+          maxWidth: '500px',
+          width: 500,
+          height: 400,
+          perspective: 1000
+        },
+        title: {
+          textAlign: 'center',
+          height: 40,
+          lineHeight: '40px',
+        },
+        subTitle: {
+            textAlign: 'center'
+          },
+        flipper: {
+          transition: '0.4s',
+          transformStyle: 'preserve-3d',
+          position: 'relative',
+          transform: `rotateY(${!this.state.isLogin || this.state.isRecoveringPassword ? '180' : '0'}deg)`,
+        },
+        footerTitle: {
+          textAlign: 'center',
+        },
+        footerLink: {
+            display: 'block',
+            textAlign: 'center',
+          },
+        footerMessage: {
+            textAlign: 'center',
+          },
+        logo: {
+            textAlign: 'center',
+            height: 40,
+            lineHeight: '40px',
+          },
+      };
     const showCard = () => {
       if (this.state.isLogin && !this.state.isRecoveringPassword) {
         return (
@@ -134,8 +149,13 @@ class ReactSignupLoginComponent extends React.Component {
         id="main-wrapper"
         style={Object.assign(styles.wrapper, this.props.styles.mainWrapper)}
       >
+        <div style={Object.assign(styles.logo, this.props.styles.logo)}>{this.props.logo}</div>
         <h1 style={Object.assign(styles.title, this.props.styles.mainTitle)}>{this.props.title}</h1>
+        <h2 style={Object.assign(styles.subTitle, this.props.styles.subTitle)}>{this.props.subTitle}</h2>
         <div style={Object.assign(styles.flipper, this.props.styles.flipper)}>{showCard()}</div>
+        <h3 style={Object.assign(styles.footerTitle, this.props.styles.footerTitle)}>{this.props.footerTitle}</h3>
+        <a style={Object.assign(styles.footerLink, this.props.styles.footerLink)} href={Object.assign(this.props.footerLink)}>{this.props.footerLinkLabel}</a>
+        <h3 style={Object.assign(styles.footerMessage, this.props.styles.footerMessage)}>{this.props.footerMessage}</h3>
       </section>
     );
   }
@@ -143,12 +163,24 @@ class ReactSignupLoginComponent extends React.Component {
 
 ReactSignupLoginComponent.propTypes = {
   title: PropTypes.string,
+  subTitle: PropTypes.string,
+  logo: PropTypes.string,
+  footerTitle:PropTypes.string,
+  footerLink:PropTypes.string,
+  footerLinkLabel:PropTypes.string,
+  footerMessage:PropTypes.string,
   isLogin: PropTypes.bool,
   isRecoveringPassword: PropTypes.bool,
   styles: PropTypes.shape({
     mainWrapper: PropTypes.object,
     mainTitle: PropTypes.object,
+    subTitle: PropTypes.object,
+    logo: PropTypes.object,
+    mainTitle: PropTypes.object,
     flipper: PropTypes.object,
+    footerTitle:PropTypes.object,
+    footerLink:PropTypes.object,
+    footerMessage:PropTypes.object,
     signup: PropTypes.shape({
       wrapper: PropTypes.object,
       inputWrapper: PropTypes.object,
@@ -192,6 +224,12 @@ ReactSignupLoginComponent.defaultProps = {
   title: 'Company Name',
   isLogin: true,
   isRecoveringPassword: false,
+  subTitle: 'Sub Title',
+  logo: 'Logo',
+  footerTitle:'Footer Title',
+  footerLink:'/',
+  footerLinkLabel:'Footer Link',
+  footerMessage :'Footer Text',
   styles: {},
   usernameCustomLabel: 'Username',
   passwordCustomLabel: 'Password',
